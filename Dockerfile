@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.10.0
-LABEL maintainer="United Classifieds <unitedclassifiedsapps@gmail.com>"
+LABEL maintainer="Suryakant Bharti <suryakant.bharti@gmail.com>"
 
 CMD ["/sbin/my_init"]
 
