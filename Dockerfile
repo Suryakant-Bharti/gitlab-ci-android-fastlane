@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.10.0
+FROM phusion/baseimage:latest
 LABEL maintainer="Suryakant Bharti <suryakant.bharti@gmail.com>"
 
 CMD ["/sbin/my_init"]
