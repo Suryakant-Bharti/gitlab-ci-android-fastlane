@@ -43,7 +43,6 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager "extras;android;m2repository" "extras;g
 
 cd $ANDROID_HOME/tools/bin
 
-RUN android update sdk -u --filter platform-tools,android-25
 RUN sdkmanager --verbose "system-images;android-25;google_apis;x86"
 RUN echo no | avdmanager -v create avd -n testAvd -k "system-images;android-25;google_apis;x86"
 
