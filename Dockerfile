@@ -32,9 +32,6 @@ RUN apt-get -y install --no-install-recommends \
     file \
     ssh
 
-ADD https://dl.google.com/dl/android/studio/ide-zips/3.3.1.0/android-studio-ide-182.5264788-linux.zip /ide.zip
-RUN unzip /ide.zip -d /sdk && rm -rf /ide.zip
-
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS}.zip /tools.zip
 RUN unzip /tools.zip -d /sdk && rm -rf /tools.zip
 
@@ -44,8 +41,8 @@ RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "platform-tools" "tools" "platforms;android-${VERSION_TARGET_SDK}" "build-tools;${VERSION_BUILD_TOOLS}"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
 
-RUN sdkmanager --verbose "system-images;android-25;google_apis;x86"
-RUN echo no | avdmanager -v create avd -n testAvd -k "system-images;android-25;google_apis;x86"
+RUN sdkmanager --verbose "system-images;android-25;google_apis;x86_64"
+RUN echo no | avdmanager -v create avd -n testAvd -k "system-images;android-25;google_apis;x86_64"
 
 RUN gem install fastlane
 
