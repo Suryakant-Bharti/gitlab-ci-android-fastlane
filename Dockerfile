@@ -32,6 +32,9 @@ RUN apt-get -y install --no-install-recommends \
     file \
     ssh
 
+ADD https://dl.google.com/dl/android/studio/ide-zips/3.3.1.0/android-studio-ide-182.5264788-linux.zip /ide.zip
+RUN unzip /ide.zip -d /sdk && rm -rf /ide.zip
+
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS}.zip /tools.zip
 RUN unzip /tools.zip -d /sdk && rm -rf /tools.zip
 
