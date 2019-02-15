@@ -32,6 +32,8 @@ RUN apt-get -y install --no-install-recommends \
     file \
     ssh
 
+RUN apt-get -y install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS}.zip /tools.zip
 RUN unzip /tools.zip -d /sdk && rm -rf /tools.zip
 
